@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+
+spring:
+  application:
+    name: remixed-dj-sync
+  autoconfigure:
+    # spring-security-oauth2-jose is only used to verify JWTs; no Spring Security filter chain.
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+dj-sync:
+  supabase-url: ${SUPABASE_URL:}
+  supabase-jwt-secret: ${SUPABASE_JWT_SECRET:}
+  supabase-service-key: ${SUPABASE_SERVICE_ROLE_KEY:}

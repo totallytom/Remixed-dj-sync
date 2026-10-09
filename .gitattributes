@@ -1,0 +1,5 @@
+# The wrapper script runs on Linux (CI, Docker): keep LF even from a Windows checkout.
+gradlew      text eol=lf
+*.sh         text eol=lf
+*.bat        text eol=crlf
+*.jar        binary
